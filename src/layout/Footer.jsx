@@ -6,10 +6,10 @@ export default function Footer() {
     <footer className="border-t mt-10">
       <div className="max-w-6xl mx-auto p-6">
 
-        {/* TOP SIDE */}
+    
         <div className="grid gap-8 md:grid-cols-3">
 
-          {/* BRAND */}
+         
           <div>
             <h2 className="text-xl font-bold mb-2">E-Commerce</h2>
             <p className="text-sm text-gray-600">
@@ -17,7 +17,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* LINKS */}
+        
           <div>
             <h3 className="font-semibold mb-2">Sayfalar</h3>
             <ul className="space-y-1 text-sm">
@@ -28,7 +28,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* SOCIAL ICONS */}
+          
           <div>
             <h3 className="font-semibold mb-2">Bizi Takip Edin</h3>
 
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM LINE */}
+       
         <div className="text-center text-sm text-gray-600 mt-8">
           © 2025 E-Commerce — All rights reserved
         </div>

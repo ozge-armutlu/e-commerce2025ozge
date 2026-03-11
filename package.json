@@ -15,12 +15,15 @@
     "lucide-react": "^0.562.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.71.0",
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^5.3.4",
     "react-slick": "^0.31.0",
     "react-toastify": "^11.0.5",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^3.1.0",
+    "reselect": "^5.1.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

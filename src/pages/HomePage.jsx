@@ -1,15 +1,32 @@
 import HeroSlider from "../components/HeroSlider";
-import ProductCard from "../components/ProductCard";
+
 import Features from "../components/Features";
 
-const mockProducts = [
-  { id: 1, name: "Summer Dress", price: "$49.99", image: "https://via.placeholder.com/300x300" },
-  { id: 2, name: "Casual Shirt", price: "$29.99", image: "https://via.placeholder.com/300x300" },
-  { id: 3, name: "Jeans", price: "$59.99", image: "https://via.placeholder.com/300x300" },
-  { id: 4, name: "Sneakers", price: "$79.99", image: "https://via.placeholder.com/300x300" },
-];
+import { Link } from "react-router-dom";
+
+import { useSelector } from "react-redux";
+
 
 export default function HomePage() {
+
+  const categories = useSelector((state) => state.category.categories);
+
+  const slugify = (text) =>
+    text
+      ?.toLowerCase()
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c")
+      .replace(/\s+/g, "-");
+
+  const topCategories = categories ? [...categories].sort((a,b) => b.rating - a.rating).slice(0, 5) : [];
+
+  
+
+
   return (
     <div className="flex flex-col gap-8">
 
@@ -17,23 +34,32 @@ export default function HomePage() {
 
       <Features />
 
-      <section className="px-4">
+    <section className="px-4">
+      <h2 className="text-xl font-bold mb-4">Top Categories</h2>
 
-        <h2 className="text-xl font-bold mb-2">
-          New Arrivals
-        </h2>
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+    {topCategories.map((cat) => (
+    <Link
+    key={cat.id}
+    to={`/shop/${cat.gender}/${slugify(cat.title)}/${cat.id}`}
+    className="border rounded p-3 text-center hover:shadow-md transition">
 
-        <p className="text-gray-500 text-sm mb-4">
-          Best picks for you
-        </p>
+      {cat.img && (
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {mockProducts.map((p) => (
-            <ProductCard key={p.id} product={p} />
-          ))}
-        </div>
+        <img
+          src={cat.img}
+          alt={cat.title}
+          className="w-full h-32 object-cover mb-2"/>
+      )}
+    <p className="font-medium">{cat.title}</p>
 
-      </section>
+    </Link>
+
+    ))}
+ </div>
+ </section>
+
+      
     </div>
   );
 }

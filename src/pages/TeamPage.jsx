@@ -4,7 +4,7 @@ export default function TeamPage() {
       id: 1,
       name: "Gökhan Özdemir",
       role: "Project Manager",
-      image: "https://via.placeholder.com/300", // linkedin image koyabilirsin
+      image: "https://via.placeholder.com/300", 
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ export default function TeamPage() {
   return (
     <section className="px-4 py-6 flex flex-col gap-6 md:max-w-6xl md:mx-auto">
 
-      {/* Title */}
+   
       <div className="flex flex-col gap-1">
         <h1 className="text-xl font-bold">
           Our Team
@@ -39,7 +39,7 @@ export default function TeamPage() {
         </p>
       </div>
 
-      {/* Team Grid */}
+     
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
         {team.map((member) => (

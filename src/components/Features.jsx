@@ -4,7 +4,7 @@ export default function Features() {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-4">
 
-      {/* CARD 1 */}
+   
       <div className="flex items-center gap-3 p-4 border rounded-xl">
         <Truck className="w-8 h-8" />
         <div>
@@ -13,7 +13,7 @@ export default function Features() {
         </div>
       </div>
 
-      {/* CARD 2 */}
+      
       <div className="flex items-center gap-3 p-4 border rounded-xl">
         <Headphones className="w-8 h-8" />
         <div>
@@ -22,7 +22,7 @@ export default function Features() {
         </div>
       </div>
 
-      {/* CARD 3 */}
+    
       <div className="flex items-center gap-3 p-4 border rounded-xl">
         <ShieldCheck className="w-8 h-8" />
         <div>
